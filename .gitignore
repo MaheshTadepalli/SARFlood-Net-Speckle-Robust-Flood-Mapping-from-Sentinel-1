@@ -1,0 +1,8 @@
+build/
+data/
+.vs/
+*.user
+*.suo
+*.log
+*.tmp
+README.md

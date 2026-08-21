@@ -1,0 +1,14 @@
+listen_host = "0.0.0.0"
+listen_port = 8080
+data_dir = "data/node-b"
+metadata_db = "data/node-b/metadata.sqlite"
+chunk_size = 4194304
+replication_factor = 3
+write_quorum = 2
+read_quorum = 2
+node_id = "node-b"
+peer = "node-a=node-a:8080"
+peer = "node-c=node-c:8080"
+admin_token = "admin-token"
+wal_path = "data/node-b/wal.log"
+handoff_path = "data/node-b/hinted-handoff.log"

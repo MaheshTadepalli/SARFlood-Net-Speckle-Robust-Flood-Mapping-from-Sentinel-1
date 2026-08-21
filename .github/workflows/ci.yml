@@ -1,0 +1,13 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y build-essential cmake libsqlite3-dev
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DDSTORE_BUILD_TESTS=ON
+      - run: cmake --build build -j2
+      - run: ctest --test-dir build --output-on-failure
